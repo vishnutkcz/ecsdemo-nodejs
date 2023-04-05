@@ -11,6 +11,7 @@ ENV NODE_ENV ${NODE}
 WORKDIR /usr/src/app
 COPY package*.json ./
 COPY . .
+RUN ls -la
 RUN apk -U add curl jq bash nodejs nodejs-npm python3 py3-pip && \
   pip3 install awscli netaddr && \
   npm install && apk del --purge nodejs-npm && \
